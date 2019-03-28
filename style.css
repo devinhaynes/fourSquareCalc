@@ -1,0 +1,20 @@
+html {
+  height: 100vh;
+  overflow: auto;
+}
+
+body {
+  height: 100vh;
+}
+
+nav {
+  height: 7%;
+}
+
+.main {
+  background-image: linear-gradient(rgba(137, 155, 235, 0), rgba(137, 155, 235, 1));
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 90%;
+  overflow: auto;
+}

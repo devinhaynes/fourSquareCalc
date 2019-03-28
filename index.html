@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Real estate four square method calculator to determine COCROI and Equity ROI">
+  <meta name="author" content="Devin Haynes">
+
+  <!-- W3 CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Add icon library -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- Add jquery CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <title>Four Square Calculator</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="nav flex-column mx-auto my-1">
+      <span class="navbar-brand">Four Square Calculator</span>
+    </div>
+  </nav>
+  <div class="main container-fluid mt-5">
+    <div class="income">
+      <div class="flex mx-auto text-center">
+        <h1>Income</h1>
+      </div>
+      <hr>
+      <div class="container">
+        <form>
+          <div class="form-group">
+            <label for="rentalIncome">Rent: </label>
+            <input class="form-control" type="text" name="" value="" placeholder="1000" id="rent">
+            <small class="form-text text-muted">Enter the estimated monthly income of property</small>
+            <div class="alert alert-danger alert-dismissable collapse income-alert m-1" role="alert">
+              Invalid input
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="rentalIncome">Additional income: </label>
+            <input class="form-control" type="text" name="" value="" placeholder="50" id="additional">
+            <small class="form-text text-muted">Enter any additional income you may receive</small>
+            <div class="alert alert-danger alert-dismissable collapse additional-alert m-1" role="alert">
+              Invalid input
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+          <div class="text-right mb-4">
+            <button class="btn btn-outline-primary mb-4" type="button" name="btn-income" id="btn-income">Continue</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="cashFlow collapse">
+      <div class="flex mx-auto text-center">
+        <h1>Cash Flow</h1>
+      </div>
+      <hr>
+      <div class="container">
+        <form>
+          <div class="form-group">
+            <label for="rentalIncome">Cash Flow = Income - Expenses</label>
+            <input class="form-control" id="cashFlow" type="text" name="" value="" readonly>
+            <small class="form-text text-muted">Enter monthly savings for Capital Expenditures</small>
+          </div>
+          <div class="text-right mb-4">
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-primary" id="btn-cashFlow-back">Back</button>
+              <button type="button" class="btn btn-outline-primary" id="btn-cashFlow">Continue</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="expenses collapse">
+      <div class="flex mx-auto text-center">
+        <h1>Expenses</h1>
+      </div>
+      <hr>
+      <div class="container">
+        <form>
+          <div class="form-group">
+            <label for="rentalIncome">Tax : </label>
+            <input class="form-control" type="text" name="" value="" placeholder="100">
+            <small class="form-text text-muted">Enter the estimated monthly tax expenses</small>
+          </div>
+          <div class="form-group">
+            <label for="rentalIncome">Insurance : </label>
+            <input class="form-control" type="text" name="" value="" placeholder="80">
+            <small class="form-text text-muted">Enter the estimated monthly insurance expenses</small>
+          </div>
+          <div class="form-group">
+            <label for="rentalIncome">Utilities : </label>
+            <input class="form-control" type="text" name="" value="" placeholder="0">
+            <small class="form-text text-muted">Enter the estimated monthly cost for utilities paid by you</small>
+          </div>
+          <div class="form-group">
+            <label for="rentalIncome">Repairs : </label>
+            <input class="form-control" type="text" name="" value="" placeholder="50">
+            <small class="form-text text-muted">Enter monthly savings for repairs</small>
+          </div>
+          <div class="form-group">
+            <label for="rentalIncome">Capital Expenditures : </label>
+            <input class="form-control" type="text" name="" value="" placeholder="100">
+            <small class="form-text text-muted">Enter monthly savings for Capital Expenditures</small>
+          </div>
+          <div class="form-group">
+            <label for="rentalIncome">Property Manager : </label>
+            <input class="form-control" type="text" name="" value="" placeholder="100">
+            <small class="form-text text-muted">Enter monthly payment to property manager if any</small>
+          </div>
+          <div class="form-group">
+            <label for="rentalIncome">Mortgage : </label>
+            <input class="form-control" type="text" name="" value="" placeholder="350">
+            <small class="form-text text-muted">Enter monthly mortgage cost (Do not include taxes and insurance)</small>
+          </div>
+          <div class="form-group">
+            <label for="rentalIncome">Other : </label>
+            <input class="form-control" type="text" name="" value="" placeholder="100">
+            <small class="form-text text-muted">Enter any other costs that may be associated with the property</small>
+          </div>
+          <div class="text-right mb-4">
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-primary" id="btn-expenses-back">Back</button>
+              <button type="button" class="btn btn-outline-primary" id="btn-expenses">Continue</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="coc collapse">
+      <div class="flex mx-auto text-center">
+        <h1>Cash-on-Cash ROI</h1>
+      </div>
+      <hr>
+      <div class="container">
+        <form>
+          <div class="form-group">
+            <label for="rentalIncome">Down Payment : </label>
+            <input class="form-control" type="text" name="" value="" placeholder="20000">
+            <small class="form-text text-muted">Enter down payment amount</small>
+          </div>
+          <div class="form-group">
+            <label for="rentalIncome">Closing Costs : </label>
+            <input class="form-control" type="text" name="" value="" placeholder="1200">
+            <small class="form-text text-muted">Enter the estimated closing costs</small>
+          </div>
+          <div class="form-group">
+            <label for="rentalIncome">Rehab Costs : </label>
+            <input class="form-control" type="text" name="" value="" placeholder="5000">
+            <small class="form-text text-muted">Enter the estimated cost of repairs</small>
+          </div>
+          <div class="text-right mb-4">
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-primary" id="btn-coc-back">Back</button>
+              <button type="button" class="btn btn-outline-primary" id="btn-coc">Calculate</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+  <!-- Contact Form JavaScript -->
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script src="js/contact_me.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/freelancer.min.js"></script>
+
+  <script type="text/javascript" src="main.js"></script>
+
+</body>
+
+</html>
