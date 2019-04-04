@@ -18,3 +18,11 @@ nav {
   min-height: 90%;
   overflow: auto;
 }
+
+.calc {
+  background-color: rgb(201, 201, 201);
+  width: 235px;
+  height: auto;
+  top: 1rem;
+  right: 1rem;
+}

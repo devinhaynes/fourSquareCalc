@@ -23,6 +23,8 @@ var dp = 0;
 var cc = 0;
 var rehab = 0;
 var totalInvestment = 0;
+//Calculator inputs
+let inputs = "";
 
 //  ** Income Screen **
 $("#btn-income").click(function() {
@@ -48,6 +50,7 @@ $("#btn-expenses").click(function() {
   !$("#insurance").val() ? insurance = 0 : insurance = parseInt($("#insurance").val());
   !$("#utilities").val() ? utilities = 0 : utilities = parseInt($("#utilities").val());
   !$("#vacancy").val() ? vacancy = 0 : vacancy = parseInt($("#vacancy").val());
+  !$("#repairs").val() ? repairs = 0 : repairs = parseInt($("#repairs").val());
   !$("#capEx").val() ? capEx = 0 : capEx = parseInt($("#capEx").val());
   !$("#propMan").val() ? propMan = 0 : propMan = parseInt($("#propMan").val());
   !$("#mortgage").val() ? mortgage = 0 : mortgage = parseInt($("#mortgage").val());
@@ -122,8 +125,30 @@ $("#btn-coc").click(function() {
   $(".results").removeClass("collapse");
   $(".coc").addClass("collapse");
 });
-
+//Display final results
 $("#btn-results").click(function() {
   $(".income").removeClass("collapse");
   $(".results").addClass("collapse");
+})
+//Display Calc
+$(".burger").click(function() {
+  $(".calc").removeClass("collapse");
+})
+//Close Calc
+$(".closeCalc").click(function() {
+  $(".input-display").val("0");
+  $(".calc").addClass("collapse");
+})
+//Update calc display
+$(".bttn").click(function() {
+  if(this.value == "=") {
+    let results = eval(inputs);
+    $(".input-display").val(results);
+    inputs = "";
+  } else {
+    inputs += this.value;
+    $(".input-display").val(inputs);
+  }
+
+  //$(".input-display").val(this.value);
 })
