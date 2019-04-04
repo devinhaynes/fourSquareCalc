@@ -137,6 +137,7 @@ $(".burger").click(function() {
 //Close Calc
 $(".closeCalc").click(function() {
   $(".input-display").val("0");
+  inputs = "";
   $(".calc").addClass("collapse");
 })
 //Update calc display
